@@ -1,0 +1,70 @@
+.who-is {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: center;
+  gap: 44px;
+}
+
+.who-is__title {
+  font-size: 1.75rem;
+  margin-bottom: 14px;
+}
+
+.who-is__desc {
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.who-is__roles {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.who-is__role {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.who-is__role-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.who-is__role-icon--blue {
+  background: var(--color-primary);
+}
+
+.who-is__role-icon--teal {
+  background: var(--color-teal);
+}
+
+.who-is__role h4 {
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.who-is__role p {
+  font-size: 0.85rem;
+}
+
+.who-is__visual img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+}
+
+@media (max-width: 860px) {
+  .who-is {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,41 @@
+.cta-banner {
+  background: var(--color-bg-cta);
+  border-radius: var(--radius-xl);
+  padding: 28px 44px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.cta-banner__image {
+  width: 120px;
+  height: auto;
+  border-radius: var(--radius-md);
+  align-self: center;
+}
+
+.cta-banner__text {
+  flex: 1;
+}
+
+.cta-banner__title {
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+}
+
+.cta-banner__subtitle {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 800px) {
+  .cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .cta-banner__image {
+    align-self: center;
+    margin-bottom: 0;
+  }
+}

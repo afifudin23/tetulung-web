@@ -1,0 +1,103 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordion--2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .accordion--2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.accordion__item {
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-sm);
+  padding: 4px 16px;
+}
+
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 0;
+  text-align: left;
+}
+
+.accordion__icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--color-primary);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.accordion__question {
+  flex: 1;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-navy);
+}
+
+.accordion__chevron {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.accordion__item.is-open .accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.accordion__answer {
+  font-size: 0.85rem;
+  padding: 0 0 14px;
+  color: var(--color-text);
+}
+
+/* ---------- Varian numbered (halaman FAQ) ---------- */
+.accordion--numbered .accordion__item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 8px 20px;
+}
+
+.accordion--numbered .accordion__item.is-open {
+  box-shadow: var(--shadow-sm);
+}
+
+.accordion__number {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-soft);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.accordion--numbered .accordion__question {
+  font-size: 0.95rem;
+}
+
+.accordion--numbered .accordion__answer {
+  padding-left: 46px;
+}

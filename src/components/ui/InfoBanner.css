@@ -1,0 +1,20 @@
+.info-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--color-bg-soft);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+}
+
+.info-banner__icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-banner__text {
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}

@@ -1,0 +1,61 @@
+.why-choose {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  gap: 44px;
+}
+
+.why-choose__visual img {
+  width: 100%;
+  height: auto;
+}
+
+.why-choose__title {
+  font-size: 1.75rem;
+  margin-bottom: 24px;
+}
+
+.why-choose__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.why-choose__item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.why-choose__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.why-choose__item h4 {
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+
+.why-choose__item p {
+  font-size: 0.85rem;
+}
+
+@media (max-width: 860px) {
+  .why-choose {
+    grid-template-columns: 1fr;
+  }
+
+  /* Di mobile, gambar tampil setelah judul & daftar */
+  .why-choose__visual {
+    order: 1;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+}

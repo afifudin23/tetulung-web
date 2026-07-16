@@ -1,0 +1,188 @@
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ---------- Formulir ---------- */
+.contact__form {
+  background: #fbfcfe;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact__form-head {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.contact__form-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.contact__form-head h2 {
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.contact__form-head p {
+  font-size: 0.85rem;
+}
+
+.contact__field > span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 6px;
+}
+
+.contact__input {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #fff;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  color: var(--color-text-muted);
+  transition: border-color 0.15s ease;
+}
+
+.contact__input:focus-within {
+  border-color: var(--color-primary);
+}
+
+.contact__input input,
+.contact__input select,
+.contact__input textarea {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  font-size: 0.88rem;
+  color: var(--color-navy);
+  padding: 12px 0;
+  width: 100%;
+}
+
+.contact__input--area {
+  padding: 0 14px;
+}
+
+.contact__input textarea {
+  resize: vertical;
+}
+
+.contact__input input::placeholder,
+.contact__input textarea::placeholder {
+  color: #9aa9bd;
+}
+
+.contact__submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-teal));
+  transition: opacity 0.15s ease;
+}
+
+.contact__submit:hover {
+  opacity: 0.92;
+}
+
+.contact__privacy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Kanal kontak ---------- */
+.contact__channels {
+  background: #fbfcfe;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact__channels-title {
+  font-size: 1.25rem;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--color-primary);
+  align-self: flex-start;
+  margin-bottom: 6px;
+}
+
+.contact__channel {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+a.contact__channel:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact__channel-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.contact__channel h4 {
+  font-size: 0.95rem;
+}
+
+.contact__channel p {
+  font-size: 0.82rem;
+  margin: 2px 0 4px;
+}
+
+.contact__channel strong {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+}

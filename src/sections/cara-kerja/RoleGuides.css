@@ -1,0 +1,129 @@
+.role-guides {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.role-guides__card {
+  border-radius: var(--radius-xl);
+  padding: 30px;
+}
+
+.role-guides__card--blue {
+  background: var(--color-bg-soft);
+}
+
+.role-guides__card--teal {
+  background: #e9f7f4;
+}
+
+.role-guides__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.role-guides__head h3 {
+  font-size: 1.15rem;
+}
+
+.role-guides__card--teal .role-guides__head h3 {
+  color: var(--color-teal-dark);
+}
+
+.role-guides__head-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.role-guides__card--blue .role-guides__head-icon {
+  background: var(--color-primary);
+}
+
+.role-guides__card--teal .role-guides__head-icon {
+  background: var(--color-teal);
+}
+
+.role-guides__steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.role-guides__step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed rgba(20, 53, 92, 0.15);
+}
+
+.role-guides__step:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.role-guides__number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.role-guides__card--blue .role-guides__number {
+  background: var(--color-primary);
+}
+
+.role-guides__card--teal .role-guides__number {
+  background: var(--color-teal);
+}
+
+.role-guides__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.role-guides__card--blue .role-guides__icon {
+  color: var(--color-primary);
+}
+
+.role-guides__card--teal .role-guides__icon {
+  color: var(--color-teal);
+}
+
+.role-guides__step h4 {
+  font-size: 0.9rem;
+}
+
+.role-guides__card--teal .role-guides__step h4 {
+  color: var(--color-teal-dark);
+}
+
+.role-guides__step p {
+  font-size: 0.82rem;
+  margin-top: 2px;
+}
+
+@media (max-width: 860px) {
+  .role-guides {
+    grid-template-columns: 1fr;
+  }
+}
