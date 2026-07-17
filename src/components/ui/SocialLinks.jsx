@@ -18,8 +18,8 @@ const FacebookIcon = ({ size = 17, ...props }) => (
 );
 
 const SOCIALS = [
-  { icon: InstagramIcon, href: "https://instagram.com", label: "Instagram" },
-  { icon: FacebookIcon, href: "https://facebook.com", label: "Facebook" },
+  { icon: InstagramIcon, href: "https://www.instagram.com/tetulung29?igsh=aWtqenJjM3dibWFo", label: "Instagram" },
+  { icon: FacebookIcon, href: "https://www.facebook.com/share/1BnqfwpBHS/", label: "Facebook" },
   { icon: MessageCircle, href: WHATSAPP_LINK, label: "WhatsApp" },
 ];
 

@@ -133,7 +133,7 @@ export const FOOTER = {
   contact: {
     title: "Hubungi Kami",
     phone: "0851-1362-8457",
-    email: "info@tetulung.id",
+    email: "tetulung29@gmail.com",
     location: "Indonesia",
   },
   hours: {

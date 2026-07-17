@@ -44,9 +44,9 @@ export const CONTACT_CHANNELS = [
     iconBg: "linear-gradient(135deg, #f58529, #dd2a7b 55%, #8134af)",
     title: "Instagram",
     description: "Follow dan DM kami di Instagram",
-    value: "@tetulung.id",
+    value: "@tetulung29",
     valueColor: "#dd2a7b",
-    href: "https://instagram.com/tetulung.id",
+    href: "https://www.instagram.com/tetulung29?igsh=aWtqenJjM3dibWFo",
   },
   {
     icon: MapPin,

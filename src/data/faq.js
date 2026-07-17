@@ -87,7 +87,7 @@ export const FAQ_ITEMS = [
     category: "umum",
     question: "Bagaimana cara menghubungi admin Tetulung?",
     answer:
-      "Anda dapat menghubungi kami melalui WhatsApp, email info@tetulung.id, atau Instagram @tetulung.id.",
+      "Anda dapat menghubungi kami melalui WhatsApp, email tetulung29@gmail.com, atau Instagram @tetulung29.",
   },
   {
     category: "umum",
