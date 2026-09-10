@@ -54,7 +54,7 @@ export const ROLE_GUIDES = [
     tone: "blue",
     title: "Untuk Pemohon",
     steps: [
-      { icon: LogIn, title: "Login / Daftar", description: "Masuk ke Tetulung melalui WhatsApp." },
+      { icon: LogIn, title: "Login / Daftar", description: "Masuk atau daftar lewat aplikasi Tetulung." },
       { icon: SquarePen, title: "Klik Nyuwun Tulung", description: "Pilih jenis bantuan yang Anda butuhkan." },
       { icon: ClipboardList, title: "Isi Detail Kebutuhan", description: "Lengkapi informasi seperti lokasi, detail, dan estimasi biaya." },
       { icon: Bell, title: "Tunggu Respon", description: "Permintaan akan diterima oleh Tukang Tulung terdekat." },
@@ -65,7 +65,7 @@ export const ROLE_GUIDES = [
     tone: "teal",
     title: "Untuk Tukang Tulung",
     steps: [
-      { icon: LogIn, title: "Login / Daftar", description: "Masuk ke Tetulung melalui WhatsApp." },
+      { icon: LogIn, title: "Login / Daftar", description: "Masuk atau daftar lewat aplikasi Tetulung." },
       { icon: ToggleRight, title: "Aktifkan Status", description: "Pastikan status Anda aktif untuk menerima permintaan." },
       { icon: Bell, title: "Terima Permintaan", description: "Pilih permintaan yang sesuai dan setujui detailnya." },
       { icon: Bike, title: "Kerjakan Bantuan", description: "Selesaikan bantuan dengan aman dan tepat waktu." },
@@ -104,7 +104,8 @@ export const SAFETY_FEATURES = [
 export const CARA_KERJA_FAQ = [
   {
     question: "Apakah harus punya aplikasi?",
-    answer: "Saat ini layanan Tetulung masih melalui WhatsApp.",
+    answer:
+      "Ya, untuk meminta atau menawarkan bantuan Anda perlu menggunakan aplikasi Tetulung. WhatsApp kami sediakan khusus untuk menghubungi admin jika ada kendala atau bug pada aplikasi.",
   },
   {
     question: "Bagaimana pembayaran dilakukan?",

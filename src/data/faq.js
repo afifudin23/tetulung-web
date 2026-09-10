@@ -45,7 +45,7 @@ export const FAQ_ITEMS = [
     category: "pemohon",
     question: "Bagaimana cara meminta bantuan di Tetulung?",
     answer:
-      "Hubungi Tetulung melalui WhatsApp, jelaskan kebutuhan Anda (jenis bantuan, lokasi, dan estimasi biaya), lalu permintaan Anda akan diteruskan kepada Tukang Tulung terdekat.",
+      "Buka aplikasi Tetulung, pilih jenis bantuan yang Anda butuhkan, isi detail kebutuhan (lokasi dan estimasi biaya), lalu kirim permintaan. Permintaan Anda akan diteruskan kepada Tukang Tulung terdekat.",
   },
   {
     category: "tukang-tulung",

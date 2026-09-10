@@ -74,7 +74,7 @@ export const TENTANG_FAQ = [
   {
     question: "Apakah Tetulung sudah berbentuk aplikasi?",
     answer:
-      "Saat ini Tetulung masih dalam tahap pengembangan aplikasi. Layanan awal tersedia melalui WhatsApp.",
+      "Sudah! Aplikasi Tetulung sudah bisa diunduh dan digunakan. Kami terus memperbaiki dan menambah fitur berdasarkan masukan pengguna.",
   },
   {
     question: "Apakah layanan Tetulung berbayar?",

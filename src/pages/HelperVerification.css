@@ -1,0 +1,303 @@
+.helper-verify-page {
+  background: linear-gradient(180deg, #f7fafe 0%, var(--color-bg-band) 100%);
+  padding: 56px 0;
+  margin-bottom: -44px;
+  display: flex;
+  align-items: center;
+}
+
+.helper-verify-page__inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ══════════════════ Kartu identitas (tampil di web) ══════════════════
+   Gaya kartu ID resmi (gradasi biru→teal, aksen hologram), tapi
+   ukurannya lega seperti kartu profil biasa — tidak dipaksa ke rasio
+   KTP supaya identitas & rating tetap nyaman dibaca. */
+.helper-verify {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 640px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--color-navy) 0%,
+    var(--color-primary) 55%,
+    var(--color-teal) 100%
+  );
+  box-shadow: var(--shadow-lg), 0 22px 44px -18px rgba(37, 99, 224, 0.45);
+}
+
+/* Tekstur garis halus ala guilloché kartu keamanan */
+.helper-verify::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05) 0px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px,
+    transparent 11px
+  );
+  pointer-events: none;
+}
+
+/* Aksen "hologram" di pojok kanan atas */
+.helper-verify::after {
+  content: "";
+  position: absolute;
+  top: -18%;
+  right: -12%;
+  width: 46%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 200deg,
+    #7dd3fc,
+    #c4b5fd,
+    #6ee7b7,
+    #fde68a,
+    #fca5f0,
+    #7dd3fc
+  );
+  opacity: 0.2;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.helper-verify__content {
+  position: relative;
+  z-index: 1;
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  color: #fff;
+}
+
+/* ── Top: logo + status verifikasi ── */
+.helper-verify__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.helper-verify__logo {
+  height: 46px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.helper-verify__badge {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px 8px 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ── Identitas: avatar + nama + role + id ── */
+.helper-verify__identity {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px 24px;
+}
+
+.helper-verify__avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.helper-verify__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  font-weight: 800;
+}
+
+.helper-verify__avatar-check {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-teal);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--color-primary-dark);
+}
+
+.helper-verify__info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.helper-verify__name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.helper-verify__role-pill {
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-pill);
+  padding: 4px 14px;
+}
+
+.helper-verify__id {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Garis putus-putus ala sobekan tiket ── */
+.helper-verify__divider {
+  border-top: 1.5px dashed rgba(255, 255, 255, 0.3);
+}
+
+/* ── Bottom: stat ringkas + QR ── */
+.helper-verify__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 16px;
+}
+
+.helper-verify__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.helper-verify__stats-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.helper-verify__stats-row span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.helper-verify__stats-row svg {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.helper-verify__since {
+  font-size: 0.85rem;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.helper-verify__qr {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 420px) {
+  .helper-verify__content {
+    padding: 22px 20px;
+    gap: 16px;
+  }
+
+  .helper-verify__logo {
+    height: 20px;
+  }
+
+  .helper-verify__badge {
+    font-size: 0.7rem;
+    padding: 5px 11px 5px 9px;
+    gap: 5px;
+  }
+
+  .helper-verify__avatar {
+    width: 62px;
+    height: 62px;
+    font-size: 1.3rem;
+  }
+
+  .helper-verify__name {
+    font-size: 1.25rem;
+  }
+}
+
+.helper-verify__footer-caption {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ── Not found state ── */
+.helper-verify__notfound {
+  text-align: center;
+  background: var(--color-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 60px 36px;
+  max-width: 380px;
+}
+
+.helper-verify__notfound-icon {
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+}
+
+.helper-verify__notfound h1 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.helper-verify__notfound p {
+  margin-bottom: 24px;
+}

@@ -1,0 +1,13 @@
+.about__highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .about__highlights {
+    grid-template-columns: 1fr;
+  }
+}

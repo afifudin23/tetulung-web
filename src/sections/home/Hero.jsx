@@ -1,12 +1,15 @@
 import { HeartHandshake, UserRound, UserRoundPlus } from "lucide-react";
+import { DiAndroid } from "react-icons/di";
+import { FaApple } from "react-icons/fa";
 import Badge from "../../components/ui/Badge";
 import Button from "../../components/ui/Button";
-import InfoBanner from "../../components/ui/InfoBanner";
-import { WHATSAPP_LINK } from "../../data/site";
+import useLatestRelease from "../../hooks/useLatestRelease";
 import heroIllustration from "../../assets/hero-illustration.png";
 import "./Hero.css";
 
 export default function Hero() {
+  const { status, apkUrl, version } = useLatestRelease();
+
   return (
     <section className="hero">
       <div className="container hero__inner">
@@ -36,14 +39,37 @@ export default function Hero() {
             </Button>
           </div>
 
-          <InfoBanner>
-            Tetulung saat ini masih dalam tahap pengembangan aplikasi. Layanan
-            awal tersedia melalui{" "}
-            <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-              <strong>WhatsApp</strong>
-            </a>
-            .
-          </InfoBanner>
+          <div className="hero__downloads">
+            <div className="hero__download-item">
+              {status === "ready" ? (
+                <Button variant="teal" size="lg" icon={DiAndroid} href={apkUrl}>
+                  Download APK (Android)
+                </Button>
+              ) : (
+                <Button variant="teal" size="lg" icon={DiAndroid} disabled>
+                  {status === "loading"
+                    ? "Memuat rilis terbaru..."
+                    : "APK belum tersedia"}
+                </Button>
+              )}
+              {status === "ready" && version && (
+                <span className="hero__download-note">Versi {version}</span>
+              )}
+            </div>
+
+            <div className="hero__download-item">
+              <Button
+                variant="outline"
+                size="lg"
+                icon={FaApple}
+                disabled
+                title="Versi iOS masih dalam pengembangan"
+              >
+                Download iOS
+              </Button>
+              <span className="hero__download-note">Segera Hadir</span>
+            </div>
+          </div>
         </div>
 
         <div className="hero__visual">

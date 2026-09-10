@@ -9,6 +9,7 @@ import CaraKerja from "./pages/CaraKerja";
 import Gabung from "./pages/Gabung";
 import Kontak from "./pages/Kontak";
 import Faq from "./pages/Faq";
+import HelperVerification from "./pages/HelperVerification";
 import ComingSoon from "./pages/ComingSoon";
 
 function ScrollToTop() {
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/gabung" element={<Gabung />} />
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/faq" element={<Faq />} />
+        <Route path="/helper/:id" element={<HelperVerification />} />
         <Route path="*" element={<ComingSoon />} />
       </Routes>
       <Footer />

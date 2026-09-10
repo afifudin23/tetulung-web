@@ -7,6 +7,11 @@
 .role-guides__card {
   border-radius: var(--radius-xl);
   padding: 30px;
+  transition: box-shadow 0.2s ease;
+}
+
+.role-guides__card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .role-guides__card--blue {

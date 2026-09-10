@@ -37,6 +37,11 @@
   place-items: center;
   box-shadow: var(--shadow-sm);
   margin-bottom: 12px;
+  transition: transform 0.2s ease;
+}
+
+.benefits__item:hover .benefits__icon {
+  transform: scale(1.08);
 }
 
 .benefits__item h4 {
