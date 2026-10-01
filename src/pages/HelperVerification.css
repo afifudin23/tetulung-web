@@ -301,3 +301,177 @@
 .helper-verify__notfound p {
   margin-bottom: 24px;
 }
+
+/* ═══════════════ Kartu 3D 360° (lihat hooks/useCardSpin.js) ═══════════════
+   Geser / lempar kartu untuk memutar, lepas -> "nempel" ke sisi depan /
+   belakang. Sisi depan = kartu asli di atas (tidak diubah), lebar tetap
+   sama (100%, maks 640px). */
+.helper-verify-stage {
+  width: 100%;
+  max-width: 640px;
+  perspective: 1400px;
+  animation: helper-verify-enter 0.5s ease-out both;
+}
+
+.helper-verify-spin {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: grab;
+  /* Geser horizontal = putar kartu; geser vertikal tetap scroll halaman */
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.helper-verify-spin.is-dragging {
+  cursor: grabbing;
+}
+
+.helper-verify-spin > .helper-verify {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.helper-verify-spin > .helper-verify--front {
+  transform: rotateY(0deg);
+}
+
+.helper-verify-spin > .helper-verify.helper-verify--back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+}
+
+/* ── Sisi belakang: logo + QR besar ── */
+.helper-verify--back .helper-verify__content {
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.helper-verify__back-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.helper-verify__back-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+@media (max-width: 420px) {
+  .helper-verify--back .helper-verify__content {
+    gap: 12px;
+  }
+
+  .helper-verify--back .helper-verify__qr svg {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+.helper-verify__flip-hint {
+  margin-top: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border: 1px solid var(--color-border, rgba(20, 53, 92, 0.12));
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.helper-verify__flip-hint:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.helper-verify__flip-hint + .helper-verify__footer-caption {
+  margin-top: 12px;
+}
+
+/* Pantulan cahaya yang mengikuti posisi kursor / jari */
+.helper-verify__glare {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 0%),
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(255, 255, 255, 0.08) 30%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.helper-verify-spin.is-hovering .helper-verify__glare,
+.helper-verify-spin.is-dragging .helper-verify__glare {
+  opacity: 1;
+}
+
+/* Kilau diagonal yang menyapu kartu sesekali */
+.helper-verify__shine {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.helper-verify__shine::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 35%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(18deg) translateX(0);
+  animation: helper-verify-shine 6s ease-in-out 1.2s infinite;
+}
+
+@keyframes helper-verify-shine {
+  0% {
+    transform: rotate(18deg) translateX(0);
+  }
+  28%,
+  100% {
+    transform: rotate(18deg) translateX(560%);
+  }
+}
+
+/* Putaran masuknya dari useCardSpin; di sini cuma fade-in. */
+@keyframes helper-verify-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .helper-verify-stage,
+  .helper-verify__shine::before {
+    animation: none;
+  }
+}
