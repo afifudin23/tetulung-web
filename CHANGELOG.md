@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-10-09
+
+### Detail Versi 0.2.0 (jasson)
+
+### ✨ Fitur Baru — Halaman Hapus Akun (`/me/delete-account`)
+- **Halaman baru `DeleteAccount`** di `/me/delete-account`. URL ini didaftarkan di Play Console sebagai URL penghapusan akun (syarat Google Play untuk app yang punya fitur akun).
+- **Alur**: login email + password (`POST /auth/login`) → verifikasi OTP login yang dikirim ke email (`POST /auth/otp/verify`, ada tombol kirim ulang dengan jeda 60 detik dan tombol ganti akun) → popup konfirmasi custom yang menampilkan nama & email akun → **Ya, Hapus Akun** memanggil `DELETE /users/me` dengan password sebagai konfirmasi, **Batal** kembali ke beranda. Akun reviewer yang login tanpa OTP (`otp_required: false`) langsung masuk ke popup konfirmasi.
+- **Pesan error per kasus**: email tidak terdaftar, password salah, akun disuspend/dibanned atau belum bisa login (diarahkan ke admin), OTP salah/kedaluwarsa, terlalu banyak percobaan, masih ada pesanan berjalan (409), dan gagal koneksi.
+- **Info data yang dihapus & yang tetap disimpan** ditampilkan di samping form (syarat Google Play), plus alamat email admin untuk user yang tidak bisa login.
+- Setelah berhasil, tampil status "Akun Berhasil Dihapus" dengan tombol kembali ke beranda. Token cuma disimpan di memori halaman, tidak ke `localStorage`.
+- Responsif: dua kolom di desktop, satu kolom di HP, tombol popup bertumpuk di layar sempit.
+
+### 🔧 Chores
+- `src/lib/deleteAccount.js` (baru): wrapper `fetch` untuk login, verifikasi & kirim ulang OTP login, dan hapus akun, dengan `ApiError` yang membawa status HTTP & `error_code`.
+- Footer: link "Hapus Akun" ditambahkan di kolom Informasi (`src/data/site.js`).
+
 ## [0.1.0] - 2026-10-02
 
 ### Detail Versi 0.1.0 (andev)

@@ -128,6 +128,7 @@ export const FOOTER = {
       { label: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
       { label: "Kebijakan Privasi", href: "/kebijakan-privasi" },
       { label: "FAQ", href: "/faq" },
+      { label: "Hapus Akun", href: "/me/delete-account" },
     ],
   },
   contact: {
