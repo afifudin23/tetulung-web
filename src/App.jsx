@@ -10,6 +10,7 @@ import Gabung from "./pages/Gabung";
 import Kontak from "./pages/Kontak";
 import Faq from "./pages/Faq";
 import HelperVerification from "./pages/HelperVerification";
+import DeleteAccount from "./pages/DeleteAccount";
 import ComingSoon from "./pages/ComingSoon";
 
 function ScrollToTop() {
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/kontak" element={<Kontak />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/helper/:id" element={<HelperVerification />} />
+        <Route path="/me/delete-account" element={<DeleteAccount />} />
         <Route path="*" element={<ComingSoon />} />
       </Routes>
       <Footer />
